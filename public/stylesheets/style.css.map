@@ -1,0 +1,11 @@
+{
+	"version": 3,
+	"file": "style.css",
+	"sources": [
+		"style.scss",
+		"partials/_home.scss",
+		"partials/_teams.scss"
+	],
+	"names": [],
+	"mappings": ""
+}
