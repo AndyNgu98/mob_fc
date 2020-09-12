@@ -8,10 +8,10 @@ var helmet              = require("helmet");
 
 var indexRouter = require('./routes/index');
 var playersRouter = require('./routes/players');
-var connectionRouter = require('./routes/connection');
+// var connectionRouter = require('./routes/connection');
 
 var app = express();
-app.use(helmet()) //protect your site
+// app.use(helmet()) //protect your site
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,7 +37,7 @@ app.use('/styles', express.static(path.join(__dirname, '/node_modules/bulma')));
 
 app.use('/', indexRouter);
 app.use('/players', playersRouter);
-app.use('/connection', connectionRouter);
+// app.use('/connection', connectionRouter);
 
 
 

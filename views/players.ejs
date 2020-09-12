@@ -1,24 +1,70 @@
 <!DOCTYPE html>
 <html>
     <% include ../views/scripts/head %>
-
   <body>
     
 
-    <% include ../views/partials/playerhero %>
+    
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">Players</h1>
+          <h2 class="subtitle">Hero subtitle</h2>
+        </div>
+      </div>
+    </section>
 
-    <% include ../views/partials/player %>
+    <section class="players">
+      <div class="container is-widescreen">
+        
+        <div class="columns">
+
+          <% players.forEach(function(player) { %>
+
+            <div class="column">
+              <div class="card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="<%= player.image %>" alt="">
+                  </figure>
+                </div>
+                
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <img src="<%= player.icon %>" alt="">
+                      </figure>
+                    </div>
+                    <div class="media-content">
+                      <p class="title is-4"><%= player.name %></p>
+                      <p class="subtitle is-6"><%= player.position %></p>
+                    </div>
+                  </div>
+              
+                  <div class="content">
+                    <%= player.description %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            
+          <% }) %>
+          
+          
+
+        </div>
+
+      </div>
+    </section>
 
 
 
 
 
 
-
-
-    <% include ../views/partials/footer %>
-
-
+    <% include ../views/partials/footer %>    
     <% include ../views/scripts/js %>
   </body>
 </html>
