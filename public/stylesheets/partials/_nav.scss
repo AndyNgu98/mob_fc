@@ -1,0 +1,37 @@
+
+
+.navbar {
+    font-size: 1.3rem;
+    font-weight: 600; 
+    font-family: Trebuchet MS, sans-serif;
+    background-color: #ffffff;
+}
+
+.navbar-item {
+    color: rgb(0, 0, 0);
+    margin-left: 1rem;
+}
+
+.navbar .navbar-item:hover {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+.navbar-brand .navbar-item .logo-image {
+    background-image: url("../../images/logoo-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 46px;
+    height: 65px;
+}
+
+
+
+
+
+
+
+
+
+
+

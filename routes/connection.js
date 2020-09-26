@@ -39,3 +39,20 @@ module.exports = router;
     
 
 
+// connection.query(`SELECT * FROM fixtures`, (error, plays) => {
+          
+//   const fixtures = []
+
+//   plays.forEach(play => {
+//     fixtures.push({
+//       Date: play.Date,
+//       Time: play.Time,
+//       Home: play.Home,
+//       Score: play.Score,
+//       Away: play.Away,
+//       Venue: play.Venue,
+
+//     })
+//   })
+
+// });

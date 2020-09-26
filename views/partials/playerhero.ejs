@@ -1,24 +1,59 @@
+        <!-- Player Hero -->
+    <section class="player-hero hero">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="subtitle has-text-white is-2 is-size-3-mobile">Ministry Of Ball</h1>
+          <h2 class="subtitle has-text-white is-3 is-size-4-mobile">Players</h2>
+        </div>
+      </div>
+    </section>
 
-<!-- Start Hero Carousel -->
-<section class="hero is-medium has-carousel">
-    <div id="carousel-demo" class="hero-carousel">
-      <div class="item-1">
-        <!-- Slide Content -->
-        <img src="../../images/welcome.jpeg" alt="">
+
+            <!-- Player Cards -->
+    <section class=" player-card players">
+      <div class="player-con container is-widescreen pr-6">
+        
+        
+
+        <% players.forEach(function(player) { %>
+          <div class="columns ml-6 my-6">
+            <% player.forEach(function(card) { %>
+              <div class="column">
+                <div class="card" >
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src="https://via.placeholder.com/1280x960" alt="">
+                    </figure>
+                  </div>
+                  
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image is-48x48">
+                          <h2 class="has-text-weight-bold has-text-white is-size-4-mobile is-size-4"><%= card.squadNumber %></h2>
+                        </figure>
+                      </div>
+
+                      <div class="media-content">
+                        <p class="title is-4 has-text-white is-size-4-mobile mt-2"> <%= card.firstName %></p>
+                        <p class="subtitle is-6 has-text-white is-size-6-mobile "><%= card.position %></p>
+                      </div>
+                    </div>
+                
+                    <div class="content has-text-white is-size-6-mobile">
+                      <%= card.description %>
+                
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+          </div>
+        <% }) %>
+          
+          
+
+        
+
       </div>
-      <div class="item-2">
-        <!-- Slide Content -->
-        <img src="../../images/welcome.jpeg" alt="">
-      </div>
-      <div class="item-3">
-        <!-- Slide Content -->
-        <img src="../../images/welcome.jpeg" alt="">
-      </div>
-    </div>
-    <div class="hero-head"></div>
-    <div class="hero-body"></div>
-    <div class="hero-foot"></div>
-  </section>
-  <!-- End Hero Carousel -->
-  
-  
+    </section>

@@ -8,6 +8,7 @@ var helmet              = require("helmet");
 
 var indexRouter = require('./routes/index');
 var playersRouter = require('./routes/players');
+var apiInstagram = require('./routes/api/instagram');
 // var connectionRouter = require('./routes/connection');
 
 var app = express();
@@ -37,6 +38,7 @@ app.use('/styles', express.static(path.join(__dirname, '/node_modules/bulma')));
 
 app.use('/', indexRouter);
 app.use('/players', playersRouter);
+app.use('/api/instagram', apiInstagram);
 // app.use('/connection', connectionRouter);
 
 

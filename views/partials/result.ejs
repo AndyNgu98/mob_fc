@@ -1,0 +1,280 @@
+<!-- // FIXTURES AND RESULTS // -->
+
+
+<section id="results">
+    <div class="result table-container py-6">
+        <h2 class="is-size-2 is-size-3-mobile has-text-weight-bold has-text-centered mb-6">Results</h2>
+        <table class="table is-hoverable is-bordered is-fullwidth" style="width:100%">
+
+            <thead>
+                <tr class="is-selected has-background-black">
+                    <th>Date</th>
+                    <th>Time</th> 
+                    <th>Home</th>
+                    <th>Score</th>
+                    <th>Away</th>
+                </tr>
+            </thead>
+
+           <tbody>
+
+            <% scores.forEach(function(score) { %>
+                <tr>
+                 <% score.forEach(function(table) { %>
+                    <td class="is-size-6-mobile"><%= table.Date %></td>
+                    <td class="is-size-6-mobile"><%= table.Time %></td>
+                    <td class="is-size-6-mobile"><%= table.Home %></td>
+                    <td class="is-size-6-mobile"><%= table.Score %></td>
+                    <td class="is-size-6-mobile"><%= table.Away %></td>
+                 <% }) %>
+                </tr>   
+            <% }) %>
+           </tbody>
+          </table>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <section id="fixtures">
+    <div class="results">
+        <h2>Results</h2>
+        <table class="table is-hoverable" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th> 
+                    <th>Home</th>
+                    <th>Score</th>
+                    <th>Away</th>
+          
+                  </tr>
+            </thead>
+           <tbody>
+            <tr>
+                <td>20/09/20</td>
+                <td>10:30</td>
+                <td>DC Football F.C</td>
+                <td>P - P</td>
+                <td>Ministry Of Ball F.C</td>
+      
+              </tr>
+              <tr>
+                <td>12/09/20</td>
+                <td>10:30</td>
+                <td>Ministry Of Ball F.C</td>
+                <td>2 - 4</td>
+                <td>Crayford Arrows Reserves F.C</td>
+      
+              </tr>
+           </tbody>
+          </table>
+    </div>
+</section> -->
+
+
+
+
+<!-- <section id="fixtures">
+    <div class="fixture">
+        <form> 
+
+            <h3 class=" result has-text-white">Results</h3>
+
+            <div>
+                <table cellpadding="0" cellspacing="0" class="" title="Results Table" width="100%">
+                    <tbody> 
+                    <tr> 
+                      <th width="5%">&nbsp;</th>
+                      <th width="10%">DATE</th>
+                      <th width="15%" class="left-divider">TIME</th>
+                      <th width="23%" class="left-divider">HOME</th>
+                      <th width="5%">&nbsp;</th>
+                      <th width="14%">&nbsp;</th>
+                      <th width="23%">AWAY</th>
+                      <th width="15%">&nbsp;</th>
+                    </tr>
+                    
+                      
+                    
+                    <tr class="even"> 
+                      <td><a href="/DisplayFixture.do?id=20848695">PCC</a></td>
+                      <td><a href="/DisplayFixture.do?id=20848695">20/09/20</a>
+                      </td>
+                      <td class="left-divider"><a href="/DisplayFixture.do?id=20848695">10:30</a>
+                      
+                      </td>
+                      <td class="left-divider"><a href="/DisplayFixture.do?id=20848695">DC Football F.C.</a></td>
+                      <td class="score">
+                      <a href="/DisplayFixture.do?id=20848695">P&nbsp;-&nbsp;P</a></td>
+                       <td>
+                      <a href="/DisplayFixture.do?id=20848695"></a></td>
+                      <td><a href="/DisplayFixture.do?id=20848695">Ministry Of Ball F.C.</a></td>
+                      <td>&nbsp;<a href="/DisplayFixture.do?id=20848695">Postponed</a>
+                      &nbsp; 
+                      
+                      
+                      </td>
+                    
+                    </tr>
+                      
+                    
+                    <tr> 
+                      <td><a href="/DisplayFixture.do?id=20921657">VFC</a></td>
+                      <td><a href="/DisplayFixture.do?id=20921657">13/09/20</a>
+                      </td>
+                      <td class="left-divider"><a href="/DisplayFixture.do?id=20921657">10:30</a>
+                      
+                      </td>
+                      <td class="left-divider"><a href="/DisplayFixture.do?id=20921657">Ministry Of Ball F.C.</a></td>
+                      <td class="score">
+                      <a href="/DisplayFixture.do?id=20921657">2&nbsp;-&nbsp;4</a></td>
+                       <td>
+                      <a href="/DisplayFixture.do?id=20921657"></a></td>
+                      <td><a href="/DisplayFixture.do?id=20921657">Crayford Arrows Reserves F.C.</a></td>
+                      <td>&nbsp;<a href="/DisplayFixture.do?id=20921657"></a>
+                      &nbsp; 
+                      
+                      
+                      </td>
+                    
+                    </tr>
+
+                    </tbody> 
+                  </table>
+            </div>
+
+            
+            
+            
+            <div>
+                <h3 class=" fixture  has-text-white">Fixtures</h3>
+            <table cellpadding="0" cellspacing="0" class="Team-Fixtures_Table Table" title="Fixtures Table" width="100%">
+              <tbody> 
+              <tr> 
+                <th width="5%">&nbsp;</th>
+                <th width="10%">DATE</th>
+                <th width="15%" class="left-divider">TIME</th>
+                <th width="23%" class="left-divider">HOME</th>
+                <th width="24%" class="left-divider">AWAY</th>
+                <th width="23%" class="left-divider">VENUE</th>
+              </tr>
+              
+               
+               
+              
+              <tr class="even"> 
+                <td><a href="/DisplayFixture.do?id=20907009">FRTH</a></td>
+                <td><a href="/DisplayFixture.do?id=20907009">27/09/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20907009">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20907009">AFC Lessa. Christchurch</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20907009">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20907009">THE PAVILION SPORT AND LEISURE CLUB #A</a></td>
+              </tr>
+               
+               
+              
+              <tr> 
+                <td><a href="/DisplayFixture.do?id=20921656">VFC</a></td>
+                <td><a href="/DisplayFixture.do?id=20921656">04/10/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921656">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921656">AFC Lessa. Christchurch</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921656">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921656">THE PAVILION SPORT AND LEISURE CLUB #A</a></td>
+              </tr>
+               
+               
+              
+              <tr class="even"> 
+                <td><a href="/DisplayFixture.do?id=21081227">FRTH</a></td>
+                <td><a href="/DisplayFixture.do?id=21081227">11/10/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081227">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081227">FC United of Bromley First</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081227">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081227">NORMAN PARK RECREATION GROUND B</a></td>
+              </tr>
+               
+               
+              
+              <tr> 
+                <td><a href="/DisplayFixture.do?id=21081233">FRTH</a></td>
+                <td><a href="/DisplayFixture.do?id=21081233">25/10/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081233">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081233">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081233">Ellis Athletic F.C</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081233">Belvedere Sports &amp; Social Club</a></td>
+              </tr>
+               
+               
+              
+              <tr class="even"> 
+                <td><a href="/DisplayFixture.do?id=20921655">VFC</a></td>
+                <td><a href="/DisplayFixture.do?id=20921655">01/11/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921655">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921655">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921655">Manorwood F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=20921655">Belvedere Sports &amp; Social Club</a></td>
+              </tr>
+               
+               
+              
+              <tr> 
+                <td><a href="/DisplayFixture.do?id=21081251">FRTH</a></td>
+                <td><a href="/DisplayFixture.do?id=21081251">08/11/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081251">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081251">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081251">Petts Wood Ravens F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081251">Belvedere Sports &amp; Social Club</a></td>
+              </tr>
+               
+               
+              
+              <tr class="even"> 
+                <td><a href="/DisplayFixture.do?id=21081256">FRTH</a></td>
+                <td><a href="/DisplayFixture.do?id=21081256">15/11/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081256">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081256">Hatcham Beckenham Manor F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081256">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081256">HSBC SPORTS &amp; SOCIAL CLUB #1</a></td>
+              </tr>
+               
+               
+              
+              <tr> 
+                <td><a href="/DisplayFixture.do?id=21081263">FRTH</a></td>
+                <td><a href="/DisplayFixture.do?id=21081263">22/11/20</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081263">10:30</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081263">Ministry Of Ball F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081263">Hayden Youth Association Reserves F.C.</a></td>
+                <td class="left-divider"><a href="/DisplayFixture.do?id=21081263">Belvedere Sports &amp; Social Club</a></td>
+              </tr>
+               
+            
+              </tbody> 
+            </table>
+            </div>
+            
+            
+            
+            
+ 
+            </form>
+    </div>
+</section> -->

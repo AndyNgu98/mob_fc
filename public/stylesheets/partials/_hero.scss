@@ -1,0 +1,32 @@
+.header-image {
+    background-image: url("../../images/Hero.JPG");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 1;  
+}
+
+.title {
+    font-size: 3rem;
+    margin-top: -20px;
+    font-family: Trebuchet MS, sans-serif;
+
+}
+
+.hero-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+}
+
+.hero-image {
+    background-image: url("../../images/logoo-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    height: 253px;
+    width: 180px;
+}
