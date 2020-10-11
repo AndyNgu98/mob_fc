@@ -9,7 +9,12 @@ const keys = {
        database: process.env.DATABASE
 
     },
-
+    auth: {
+        user_Id: process.env.USER_ID,
+        app_Id: process.env.APP_ID,
+        App_Secret: process.env.APP_SECRET,
+        root_Url: process.env.ROOT_URL
+    }
 }
 
 module.exports = {

@@ -35,7 +35,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/styles', express.static(path.join(__dirname, '/node_modules/bulma')));
 
 
-
 app.use('/', indexRouter);
 app.use('/players', playersRouter);
 app.use('/api/instagram', apiInstagram);

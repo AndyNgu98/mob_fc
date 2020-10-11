@@ -12,6 +12,10 @@ html {
 body {
   background-color: #f8f8f8; }
 
+@media only screen and (max-width: 768px) {
+  #res {
+    display: none; } }
+
 .footer {
   color: white;
   background-color: black; }
@@ -60,13 +64,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover;
-  opacity: 1; }
-
-.title {
-  font-size: 3rem;
-  margin-top: -20px;
-  font-family: Trebuchet MS, sans-serif; }
+  background-size: cover; }
 
 .hero-container {
   display: flex;
@@ -81,6 +79,12 @@ body {
   object-fit: cover;
   height: 253px;
   width: 180px; }
+
+.about {
+  background-image: url("../../images/logoo-removebg-preview.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #101010; }
 
 .sponsor-message {
   font-family: Trebuchet MS, sans-serif;
@@ -127,5 +131,27 @@ body {
   background-repeat: no-repeat;
   width: 200px;
   height: 200px; }
+
+.fixture-image {
+  background-image: url("../../images/logoo-removebg-preview.png");
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 100px;
+  width: 70px; }
+
+.result-image {
+  background-image: url("../../images/logoo-removebg-preview.png");
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 100px;
+  width: 70px; }
 
 /*# sourceMappingURL=style.css.map */

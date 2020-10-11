@@ -1,0 +1,58 @@
+    <!-- INSTAGRAM MEDIA UNDERNEATH -->
+<!-- <section class="section">
+    <div class="container">
+        <h1 class="title has-text-centered">Follow Us On Instagram</h1>
+        <%  instagram.forEach(function(media){ %>
+            
+            
+            <img src="<%= media.media_url %>" alt="">
+          <%  }) %>
+    </div>
+</section> -->
+
+<section class=" player-card players">
+    <div class="player-con container is-widescreen pr-6">
+      
+      
+
+        <div class="columns ml-6 my-6">
+          <% instagram.forEach(function(insta) { %>
+            <div class="column">
+              <div class="card" >
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src="<%= insta.media_url %>"  alt="">
+                  </figure>
+                </div>
+                
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-left">
+                      <figure class="image is-48x48">
+                        <h2 class="has-text-weight-bold has-text-white is-size-4-mobile is-size-4"></h2>
+                      </figure>
+                    </div>
+
+                    <div class="media-content">
+                      <p class="title is-4 has-text-white is-size-4-mobile mt-2"> </p>
+                      <p class="subtitle is-6 has-text-white is-size-6-mobile "></p>
+                    </div>
+                  </div>
+              
+                  <div class="content has-text-white is-size-6-mobile">
+                    <%= insta.caption %>
+              
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% }) %>
+        </div>
+        
+    </div>
+  </section>
+        
+    
+
+
+
