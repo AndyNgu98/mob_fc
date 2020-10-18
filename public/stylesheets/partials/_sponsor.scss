@@ -1,56 +1,32 @@
 .sponsor-message {
-    font-family: Trebuchet MS, sans-serif;
+    font-family: 'Trebuchet MS', sans-serif;
     font-size: 2rem;
     margin-top: 2rem;
-    // margin-bottom: 2rem;
 }
 
-#sponsors {
+.sponsors {
     background-color: rgb(88,88,88);
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        justify-content: space-evenly;
+        flex-wrap:wrap;   
+    }
+
+    &__images {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 200px;
+
+        &--1 {background-image: url('../../images/mail-1.png');}
+        &--2 {background-image: url('../../images/mail-2.png');}
+        &--3 {background-image: url('../../images/mail-3.png');}
+        &--4 {background-image: url('../../images/sponsor-4.png');}
+
+
+    }
 }
 
-.sponsor-images {
-    display: flex;
-    justify-content: center;
-    justify-content: space-evenly;
-    flex-wrap:wrap;
-    // margin-bottom: 4rem;
-}
-
-
-.sponsor-images .image-1 {
-    background-image: url('../../images/mail-1.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-    
-}
- 
-.sponsor-images .image-2 {
-    background-image: url('../../images/mail-2.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-}
-
-.sponsor-images .image-3 {
-    background-image: url('../../images/mail-3.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-}
-
-.sponsor-images .image-4 {
-    background-image: url('../../images/mail-1.png');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 200px;
-}

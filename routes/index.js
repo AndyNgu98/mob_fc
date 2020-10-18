@@ -15,46 +15,6 @@ router.get('/', function(req, res, next) {
 
       const scores = []
 
-      const instagram = 
-      [
-        {
-        "caption": "The Boys Make It 3 Wins Out Of 3 With Another Clean Sheet Under The Belt‼️‼️ 🦍\n\nWe’d also like to thank @officialfcub for our third friendly of pre-season and wishing them best for the up coming season ahead.\n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n\n#nonleaguefootball #nonleague #happy #grassroots #soccer #coaching #sport #fourfourtwo #picoftheday #thefa #epl #englishfa #followers #london #following #football #gainfollowers #fa #fitness #footballcoach #grassrootsfootball #ladbible #kentfa #obdsfl #preseason",
-        "id": "17911804813472707",
-        "media_type": "IMAGE",
-        "media_url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/117526543_999202633928436_8376677129602965895_n.jpg?_nc_cat=109&_nc_sid=8ae9d6&_nc_ohc=T4C-XvicdvIAX_1HvVe&_nc_ht=scontent-lhr8-1.cdninstagram.com&oh=48556757d7fd78df5b9614faf0b43d32&oe=5F9E1C25",
-        "permalink": "https://www.instagram.com/p/CD9LjomBdaK/",
-        "timestamp": "2020-08-16T15:54:19+0000",
-        "username": "ministryofballfc"
-        },
-        {
-          "caption": "The Boys Make It 3 Wins Out Of 3 With Another Clean Sheet Under The Belt‼️‼️ 🦍\n\nWe’d also like to thank @officialfcub for our third friendly of pre-season and wishing them best for the up coming season ahead.\n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n\n#nonleaguefootball #nonleague #happy #grassroots #soccer #coaching #sport #fourfourtwo #picoftheday #thefa #epl #englishfa #followers #london #following #football #gainfollowers #fa #fitness #footballcoach #grassrootsfootball #ladbible #kentfa #obdsfl #preseason",
-          "id": "17911804813472707",
-          "media_type": "IMAGE",
-          "media_url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/117526543_999202633928436_8376677129602965895_n.jpg?_nc_cat=109&_nc_sid=8ae9d6&_nc_ohc=T4C-XvicdvIAX_1HvVe&_nc_ht=scontent-lhr8-1.cdninstagram.com&oh=48556757d7fd78df5b9614faf0b43d32&oe=5F9E1C25",
-          "permalink": "https://www.instagram.com/p/CD9LjomBdaK/",
-          "timestamp": "2020-08-16T15:54:19+0000",
-          "username": "ministryofballfc"
-          },
-        {
-          "caption": "The Boys Make It 3 Wins Out Of 3 With Another Clean Sheet Under The Belt‼️‼️ 🦍\n\nWe’d also like to thank @officialfcub for our third friendly of pre-season and wishing them best for the up coming season ahead.\n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n\n#nonleaguefootball #nonleague #happy #grassroots #soccer #coaching #sport #fourfourtwo #picoftheday #thefa #epl #englishfa #followers #london #following #football #gainfollowers #fa #fitness #footballcoach #grassrootsfootball #ladbible #kentfa #obdsfl #preseason",
-          "id": "17911804813472707",
-          "media_type": "IMAGE",
-          "media_url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/117526543_999202633928436_8376677129602965895_n.jpg?_nc_cat=109&_nc_sid=8ae9d6&_nc_ohc=T4C-XvicdvIAX_1HvVe&_nc_ht=scontent-lhr8-1.cdninstagram.com&oh=48556757d7fd78df5b9614faf0b43d32&oe=5F9E1C25",
-          "permalink": "https://www.instagram.com/p/CD9LjomBdaK/",
-          "timestamp": "2020-08-16T15:54:19+0000",
-          "username": "ministryofballfc"
-          },
-        {
-          "caption": "The Boys Make It 3 Wins Out Of 3 With Another Clean Sheet Under The Belt‼️‼️ 🦍\n\nWe’d also like to thank @officialfcub for our third friendly of pre-season and wishing them best for the up coming season ahead.\n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n.⁣\n.⁣\n.⁣\n.⁣\n.⁣ \n\n#nonleaguefootball #nonleague #happy #grassroots #soccer #coaching #sport #fourfourtwo #picoftheday #thefa #epl #englishfa #followers #london #following #football #gainfollowers #fa #fitness #footballcoach #grassrootsfootball #ladbible #kentfa #obdsfl #preseason",
-          "id": "17911804813472707",
-          "media_type": "IMAGE",
-          "media_url": "https://scontent-lhr8-1.cdninstagram.com/v/t51.29350-15/117526543_999202633928436_8376677129602965895_n.jpg?_nc_cat=109&_nc_sid=8ae9d6&_nc_ohc=T4C-XvicdvIAX_1HvVe&_nc_ht=scontent-lhr8-1.cdninstagram.com&oh=48556757d7fd78df5b9614faf0b43d32&oe=5F9E1C25",
-          "permalink": "https://www.instagram.com/p/CD9LjomBdaK/",
-          "timestamp": "2020-08-16T15:54:19+0000",
-          "username": "ministryofballfc"
-          }
-            
-      ]
 
       points.forEach(point => {
         scores.push({
@@ -80,20 +40,35 @@ router.get('/', function(req, res, next) {
               Venue: play.Venue,
             })
           })
-          const data = {
-            title: 'Home',
-            instagram,
-            scores,
-            fixtures,
 
-          }
+            connection.query(`SELECT * FROM instagram`, (error, insta) => {
+                
+              const instagram = []
+    
+              insta.forEach(insta => {
+                instagram.push({
+                  media: insta.media_url,
+                  link: insta.permalink
+                  
+                })
+              })
+  
+            
 
+                    const data = {
+                      title: 'Home',
+                      instagram,
+                      scores,
+                      fixtures,
 
-          const savedData = data
+                    }
 
-          res.render('index', savedData)
+                    res.render('index', data,);
+                  // const savedData = data
 
-          res.render('index', data,);
+                  // res.render('index', savedData)
+
+            });      
 
         });      
     });

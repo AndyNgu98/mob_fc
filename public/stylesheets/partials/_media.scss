@@ -4,6 +4,14 @@
           align-items: center;
   }
 
-#about-media {
-    background-color: red;
+#c-img #c-image {
+    height: 250px;
+
+
+}
+
+#c-img #c-image:hover {
+    height: 250px;
+
+    opacity: 0.5;
 }

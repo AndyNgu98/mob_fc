@@ -7,6 +7,7 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    filter: brightness(75%);
     
 }
 
@@ -32,6 +33,8 @@
     object-fit: cover;
     height: 253px;
     width: 180px;
+    filter: brightness(100%);
+
 }
 
 

@@ -16,6 +16,9 @@ body {
   #res {
     display: none; } }
 
+body {
+  background-color: whitesmoke; }
+
 .footer {
   color: white;
   background-color: black; }
@@ -64,7 +67,8 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover; }
+  background-size: cover;
+  filter: brightness(75%); }
 
 .hero-container {
   display: flex;
@@ -78,7 +82,8 @@ body {
   background-size: cover;
   object-fit: cover;
   height: 253px;
-  width: 180px; }
+  width: 180px;
+  filter: brightness(100%); }
 
 .about {
   background-image: url("../../images/logoo-removebg-preview.png");
@@ -87,50 +92,31 @@ body {
   background-color: #101010; }
 
 .sponsor-message {
-  font-family: Trebuchet MS, sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
   font-size: 2rem;
   margin-top: 2rem; }
 
-#sponsors {
+.sponsors {
   background-color: #585858; }
-
-.sponsor-images {
-  display: flex;
-  justify-content: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap; }
-
-.sponsor-images .image-1 {
-  background-image: url("../../images/mail-1.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 200px; }
-
-.sponsor-images .image-2 {
-  background-image: url("../../images/mail-2.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 200px; }
-
-.sponsor-images .image-3 {
-  background-image: url("../../images/mail-3.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 200px; }
-
-.sponsor-images .image-4 {
-  background-image: url("../../images/mail-1.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 200px;
-  height: 200px; }
+  .sponsors__container {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap; }
+  .sponsors__images {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px; }
+    .sponsors__images--1 {
+      background-image: url("../../images/mail-1.png"); }
+    .sponsors__images--2 {
+      background-image: url("../../images/mail-2.png"); }
+    .sponsors__images--3 {
+      background-image: url("../../images/mail-3.png"); }
+    .sponsors__images--4 {
+      background-image: url("../../images/sponsor-4.png"); }
 
 .fixture-image {
   background-image: url("../../images/logoo-removebg-preview.png");
@@ -153,5 +139,17 @@ body {
   object-fit: cover;
   height: 100px;
   width: 70px; }
+
+.columns.is-vcentered {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+#c-img #c-image {
+  height: 250px; }
+
+#c-img #c-image:hover {
+  height: 250px;
+  opacity: 0.5; }
 
 /*# sourceMappingURL=style.css.map */
