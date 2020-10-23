@@ -1,23 +1,16 @@
 html {
   scroll-behavior: smooth; }
 
+body {
+  background-color: #f8f8f8; }
+
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto; } }
 
-.sponsor-message {
-  display: flex;
-  justify-content: center; }
-
-body {
-  background-color: #f8f8f8; }
-
 @media only screen and (max-width: 768px) {
   #res {
     display: none; } }
-
-body {
-  background-color: whitesmoke; }
 
 .footer {
   color: white;
@@ -28,26 +21,24 @@ body {
   color: white;
   margin-left: 8px; }
 
+.navbar .navbar-item:hover {
+  background-color: #ffffff;
+  color: black; }
+
 .navbar {
   font-size: 1.3rem;
   font-weight: 600;
   font-family: Trebuchet MS, sans-serif;
   background-color: #ffffff; }
-
-.navbar-item {
-  color: black;
-  margin-left: 1rem; }
-
-.navbar .navbar-item:hover {
-  background-color: #ffffff;
-  color: black; }
-
-.navbar-brand .navbar-item .logo-image {
-  background-image: url("../../images/logoo-removebg-preview.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 46px;
-  height: 65px; }
+  .navbar__item {
+    color: black;
+    margin-left: 1rem; }
+  .navbar__logo {
+    background-image: url("../../images/logoo-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 46px;
+    height: 65px; }
 
 .card-content {
   background-color: #000000cc !important; }
@@ -62,39 +53,39 @@ body {
   background-position: center;
   background-color: #101010; }
 
-.header-image {
-  background-image: url("../../images/Hero.JPG");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  filter: brightness(75%); }
-
-.hero-container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 10px; }
-
-.hero-image {
-  background-image: url("../../images/logoo-removebg-preview.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: cover;
-  height: 253px;
-  width: 180px;
-  filter: brightness(100%); }
-
 .about {
   background-image: url("../../images/logoo-removebg-preview.png");
   background-repeat: no-repeat;
   background-position: center;
   background-color: #101010; }
 
+.heros {
+  background-image: url("../../images/Hero.JPG");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  filter: brightness(75%); }
+  .heros__container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 10px; }
+  .heros__image {
+    background-image: url("../../images/logoo-removebg-preview.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    height: 253px;
+    width: 180px;
+    filter: brightness(100%); }
+
 .sponsor-message {
   font-family: 'Trebuchet MS', sans-serif;
   font-size: 2rem;
-  margin-top: 2rem; }
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center; }
 
 .sponsors {
   background-color: #585858; }
@@ -118,22 +109,10 @@ body {
     .sponsors__images--4 {
       background-image: url("../../images/sponsor-4.png"); }
 
-.fixture-image {
+.tables-image {
   background-image: url("../../images/logoo-removebg-preview.png");
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  background-repeat: no-repeat;
-  background-size: cover;
-  object-fit: cover;
-  height: 100px;
-  width: 70px; }
-
-.result-image {
-  background-image: url("../../images/logoo-removebg-preview.png");
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   background-repeat: no-repeat;
   background-size: cover;
   object-fit: cover;

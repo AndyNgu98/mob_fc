@@ -1,48 +1,4 @@
-
-
-
-.header-image{
-    background-image: url("../../images/Hero.JPG");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    filter: brightness(75%);
-    
-}
-
-// .title {
-//     font-size: 3rem;
-//     margin-top: -20px;
-//     font-family: Trebuchet MS, sans-serif;
-
-// }
-
-.hero-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 10px;
-
-}
-
-.hero-image {
-    background-image: url("../../images/logoo-removebg-preview.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    height: 253px;
-    width: 180px;
-    filter: brightness(100%);
-
-}
-
-
-
-
-
-
-
+// ABOUT SECTION
 .about {
     background-image: url('../../images/logoo-removebg-preview.png');
     background-repeat: no-repeat;
@@ -50,4 +6,45 @@
     background-color: rgb(16,16,16);
     
 }
+
+// LANDING PAGE IMAGE
+.heros{
+    background-image: url("../../images/Hero.JPG");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    filter: brightness(75%);
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 10px;  
+    }
+
+    // LANDNING PAGE LOGO
+    &__image {
+        background-image: url("../../images/logoo-removebg-preview.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+        height: 253px;
+        width: 180px;
+        filter: brightness(100%); 
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
