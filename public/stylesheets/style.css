@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+.hero__container, .about {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; }
+
 html {
   scroll-behavior: smooth; }
 
@@ -8,31 +14,34 @@ body {
   html {
     scroll-behavior: auto; } }
 
-@media only screen and (max-width: 768px) {
-  #res {
-    display: none; } }
-
 .footer {
-  color: white;
   background-color: black; }
-
-.fab {
-  font-size: 25px;
-  color: white;
-  margin-left: 8px; }
-
-.navbar .navbar-item:hover {
-  background-color: #ffffff;
-  color: black; }
+  .footer__container {
+    text-align: center;
+    color: #ffffff; }
+  .footer__icons {
+    font-size: 25px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    margin-left: 5px; }
 
 .navbar {
   font-size: 1.3rem;
   font-weight: 600;
   font-family: Trebuchet MS, sans-serif;
   background-color: #ffffff; }
+  @media only screen and (max-width: 768px) {
+    .navbar__menu {
+      background-color: black; } }
   .navbar__item {
     color: black;
     margin-left: 1rem; }
+    @media only screen and (max-width: 768px) {
+      .navbar__item {
+        text-align: center;
+        color: #ffffff; } }
+  .navbar__item:hover {
+    color: red; }
   .navbar__logo {
     background-image: url("../../images/logoo-removebg-preview.png");
     background-repeat: no-repeat;
@@ -53,32 +62,49 @@ body {
   background-position: center;
   background-color: #101010; }
 
+.hero__container {
+  background-image: url("../../images/Hero.JPG");
+  background-attachment: fixed; }
+
+.hero__overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /*dim the background*/ }
+
+.hero__img {
+  max-width: 60%; }
+  @media only screen and (min-width: 768px) {
+    .hero__img {
+      max-width: 40%; } }
+  @media only screen and (min-width: 1024px) {
+    .hero__img {
+      max-width: 30%; } }
+
+.hero__title {
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-size: 3rem; }
+
 .about {
   background-image: url("../../images/logoo-removebg-preview.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #101010; }
-
-.heros {
-  background-image: url("../../images/Hero.JPG");
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  filter: brightness(75%); }
-  .heros__container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  color: #ffffff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: #101010;
+  margin-bottom: 10px; }
+  @media only screen and (min-width: 768px) {
+    .about {
+      padding: 6rem 3rem; } }
+  .about__title {
+    font-family: "Roboto", sans-serif;
+    font-size: 2rem;
     margin-bottom: 10px; }
-  .heros__image {
-    background-image: url("../../images/logoo-removebg-preview.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    height: 253px;
-    width: 180px;
-    filter: brightness(100%); }
 
 .sponsor-message {
   font-family: 'Trebuchet MS', sans-serif;
@@ -88,7 +114,15 @@ body {
   justify-content: center; }
 
 .sponsors {
-  background-color: #585858; }
+  background-color: #585858;
+  margin-bottom: 10px; }
+  .sponsors__title {
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 1.5rem 1.5rem; }
   .sponsors__container {
     display: flex;
     justify-content: center;
@@ -119,16 +153,64 @@ body {
   height: 100px;
   width: 70px; }
 
-.columns.is-vcentered {
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center; }
+.tables__background {
+  background-color: black;
+  padding: 3rem 1.5rem;
+  margin-bottom: 50px; }
 
-#c-img #c-image {
-  height: 250px; }
+.tables__title {
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  text-align: center; }
 
-#c-img #c-image:hover {
-  height: 250px;
+.tables__img {
+  background-image: url("../../images/logoo-removebg-preview.png");
+  display: block;
+  margin: 0 auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-fit: cover;
+  height: 100px;
+  width: 70px; }
+
+.tables__sub {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 50px; }
+
+.tables__margin {
+  margin-bottom: 50px; }
+
+.medias__title {
+  color: black;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  padding: 1rem 0; }
+  @media only screen and (max-width: 768px) {
+    .medias__title {
+      flex-direction: column;
+      padding: 2rem 1.5rem; } }
+
+.medias__container {
+  display: flex;
+  flex-wrap: wrap; }
+  @media only screen and (max-width: 768px) {
+    .medias__container {
+      flex-direction: column;
+      padding: 0 1.5rem; } }
+  @media only screen and (min-width: 768px) {
+    .medias__container {
+      flex-direction: row; } }
+
+.medias__img {
+  width: 100%;
+  height: 100%; }
+
+.medias__img:hover {
   opacity: 0.5; }
 
 /*# sourceMappingURL=style.css.map */

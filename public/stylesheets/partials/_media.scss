@@ -1,17 +1,35 @@
-// INSTAGRAM MEDIA
-.columns.is-vcentered {
-    -webkit-box-align: center;
-       -ms-flex-align: center;
-          align-items: center;
-  }
+.medias {
+    &__title {
+        color: black;
+        text-align: center;
+        font-family: $font-title;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        @include breakpoint(mobile) {
+            flex-direction: column;
+            padding: 2rem 1.5rem;
+        }
+    }
+    
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        @include breakpoint(mobile) {
+            flex-direction: column;
+            padding: 0 1.5rem;
+        }
+        @include breakpoint(tablet) {
+            flex-direction: row;
+        }
+    }
 
-#c-img #c-image {
-    height: 250px;
+    &__img {
+        width: 100%;
+        height: 100%;   
+    }
 
-
+    &__img:hover {
+        opacity: 0.5; 
+    } 
 }
 
-#c-img #c-image:hover {
-    height: 250px;
-    opacity: 0.5;
-}

@@ -24,7 +24,7 @@ router.get('/', function(req, res, next) {
 
 
       const data = {
-        title: 'players',
+        title: 'MOB-FC - Players',
         players: chunk(players, 4)
       }
 

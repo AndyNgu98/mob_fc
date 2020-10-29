@@ -8,6 +8,16 @@
 
 .sponsors {
     background-color: rgb(88,88,88);
+    margin-bottom: 10px;
+
+    &__title {
+        font-family: $font-title;
+        color: $white;
+        font-size: 2rem;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1.5rem 1.5rem;
+    }
 
     &__container {
         display: flex;
@@ -27,8 +37,6 @@
         &--2 {background-image: url('../../images/mail-2.png');}
         &--3 {background-image: url('../../images/mail-3.png');}
         &--4 {background-image: url('../../images/sponsor-4.png');}
-
-
     }
 }
 

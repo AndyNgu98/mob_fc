@@ -1,13 +1,18 @@
 
 .footer {
-    color: white;
     background-color: black;
-}
 
-//footer icons 
-.fab {
-    font-size: 25px;
-    color: white;
-    margin-left: 8px;
+    &__container {
+        text-align: center;
+        color: $white;
+    }
+
+    &__icons {
+        font-size: 25px;
+        color: $white;
+        margin-bottom: 15px; 
+        margin-left: 5px;
+
+    }
 
 }

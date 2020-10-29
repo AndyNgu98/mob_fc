@@ -56,14 +56,14 @@ router.get('/', function(req, res, next) {
             
 
                     const data = {
-                      title: 'Home',
+                      title: 'MOB-FC',
                       instagram,
                       scores,
                       fixtures,
 
                     }
 
-                    res.render('index', data,);
+                    res.render('index', data);
                   // const savedData = data
 
                   // res.render('index', savedData)

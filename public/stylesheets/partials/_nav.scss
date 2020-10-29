@@ -1,31 +1,36 @@
-
-.navbar .navbar-item:hover {
-    background-color: #ffffff;
-    color: rgb(0, 0, 0);
-
-}
-
 .navbar {
     font-size: 1.3rem;
     font-weight: 600; 
     font-family: Trebuchet MS, sans-serif;
-    background-color: #ffffff;
+    background-color: $white;
+
+  &__menu {
+    @include breakpoint(mobile) {
+      background-color: black;
+
+    }
+  }  
 
   &__item {
     color: rgb(0, 0, 0);
-    margin-left: 1rem;
-
-
-       
+    margin-left: 1rem;    
+    @include breakpoint(mobile) {
+      text-align: center;
+      color: $white;
+    } 
   }
+
+  &__item:hover {
+    color: red;
+  }
+
   &__logo {
         background-image: url("../../images/logoo-removebg-preview.png");
         background-repeat: no-repeat;
         background-size: cover;
         width: 46px;
         height: 65px;
-    } 
-     
+    }      
 }
 
 

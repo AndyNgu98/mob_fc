@@ -1,0 +1,13 @@
+@mixin breakpoint($breakpoint){
+    @if $breakpoint == mobile { @media only screen and (max-width: 768px) {@content}; }
+    @if $breakpoint == tablet { @media only screen and (min-width: 768px) {@content}; }
+    @if $breakpoint == desktop { @media only screen and (min-width: 1024px) {@content}; }
+    @if $breakpoint == widescreen { @media only screen and (min-width: 1216px) {@content}; }
+    @if $breakpoint == fullhd { @media only screen and (min-width: 1408px) {@content}; }
+}
+
+%background-center{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

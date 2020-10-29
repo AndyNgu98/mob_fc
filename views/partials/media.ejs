@@ -1,38 +1,11 @@
-    <!-- INSTAGRAM MEDIA UNDERNEATH -->
+<!-- INSTAGRAM MEDIA UNDERNEATH -->
 
-
-<section class=" player-card players mb-6">
-    <h2 class="is-size-2 is-size-3-mobile has-text-weight-bold is-family-sans-serif has-text-centered mt-6 has-text-black-bis"> FOLLOW US ON INSTAGRAM</h2>
-
-    <div class="player-con container is-widescreen pr-6">
-
-        <div class="columns ml-6 my-6">
-          <% instagram.forEach(function(insta) { %>
-            <div class="column">
-              <div id="c-img" class="card mb-6" >
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <a href="<%= insta.link %>"><img id="c-image" src="<%= insta.media %>"  alt=""></a>
-                    
-                  </figure>
-                </div>
-                
-                
-              </div>
-            </div>
-          <% }) %>
-        </div>
-        
-    </div>
-    <div class="buttons has-addons is-centered">
-        <a href="https://www.instagram.com/ministryofballfc/"><button class="button is-dark is-normal">Follow MOB</button>
-        </a>
-    </div>
-    
-
-  </section>
-        
-    
-
-
-
+<div class="medias">
+  <h2 class="medias__title">FOLLOW US ON INSTAGRAM</h2>
+  <div class="medias__container">
+    <% instagram.forEach(function(insta) { %>        
+      <div class="column "><a href="<%= insta.link %>"><img src="<%= insta.media %>" alt="" class="medias__img"></a></div>
+      <% }) %>
+  
+  </div>
+</div>

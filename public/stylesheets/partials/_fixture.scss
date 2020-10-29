@@ -12,4 +12,43 @@
 }
 
 
+.tables {
+
+    &__background {
+        background-color: black;
+        padding: 3rem 1.5rem;
+        margin-bottom: 50px;
+    }
+
+    &__title {
+        color: $white;
+        font-family: $font-title;
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    &__img {
+        background-image: url("../../images/logoo-removebg-preview.png");
+        display: block;
+        margin: 0 auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        object-fit: cover;
+        height: 100px;
+        width: 70px;
+    }
+
+    &__sub {
+        color: black;
+        font-family: $font-title;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    &__margin {
+        margin-bottom: 50px;
+    }
+}
+
 

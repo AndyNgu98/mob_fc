@@ -1,13 +1,13 @@
  <!-- Upcoming Fixtures -->
-<section id="fixtures">
-    <figure class="tables-image is-128x128 "> <img src="" alt=""></figure>
-    <h2 class="is-size-2 is-size-3-mobile has-text-weight-bold is-family-sans-serif has-text-centered mb-6 has-text-black-bis"> Fixtures</h2>
-    <div class=" fixture table-container pb-6 pt-1 ">
+<section id="fixtures" class="tables">
+    <figure class="tables__img is-128x128 "> <img src="" alt=""></figure>
+    <h2 class="tables__sub"> Fixtures</h2>
+    <div class="table-container tables__margin">
         <table class="center table is-hoverable is-bordered is-fullwidth" style="width:100%">
 
             <thead>
                 <tr class="is-selected has-background-black">
-                    <th class="is-size-6-mobile">Date/Time</th>
+                    <th class="is-size-6-mobile">Date</th>
                     <th class="is-size-6-mobile">Time</th> 
                     <th class="is-size-6-mobile">Home</th>
                     <th class="is-size-6-mobile">Away</th>
@@ -17,7 +17,7 @@
             <tbody>
             <% fixtures.forEach(function(fixture) { %>
                 <tr>      
-                    <td class="is-size-6-mobile"><%= fixture.Date %> <br> </td>
+                    <td class="is-size-6-mobile"><%= fixture.Date %></td>
                     <td class="is-size-6-mobile"><%= fixture.Time %></td>
                     <td class="is-size-6-mobile"><%= fixture.Home %></td>
                     <td class="is-size-6-mobile"><%= fixture.Away %></td>
@@ -29,35 +29,3 @@
     </div>
 </section>
  
-
-
-
-
-<!-- <section id="fixtures">
-    <div class=" fixture table-container py-6  ">
-        <h2 class="is-size-2 is-size-3-mobile has-text-weight-bold is-family-sans-serif has-text-centered mb-6 has-text-black-bis"> <figure class="fixture-image is-128x128 "> <img src="" alt=""></figure>Fixtures</h2>
-        <table class="center table is-hoverable is-bordered is-fullwidth" style="width:100%">
-
-            <thead>
-                <tr class="is-selected has-background-black">
-                    <th class="is-size-6-mobile">Date/Time</th>
-                    <th>Time</th> 
-                    <th class="is-size-6-mobile">Home</th>
-                    <th class="is-size-6-mobile">Away</th>
-                    <th class="is-size-6-mobile">Venue</th>
-                </tr>
-            </thead>
-            <tbody>
-            <% fixtures.forEach(function(fixture) { %>
-                <tr>      
-                    <td class="is-size-6-mobile"><%= fixture.Date %> <br> <%= fixture.Time %></td>
-                    <td class="is-size-6-mobile"></td>
-                    <td class="is-size-6-mobile"><%= fixture.Home %></td>
-                    <td class="is-size-6-mobile"><%= fixture.Away %></td>
-                    <td class="is-size-6-mobile"><%= fixture.Venue %></td>
-                </tr>   
-            <% }) %>
-            </tbody>
-            </table>
-    </div>
-</section> -->
