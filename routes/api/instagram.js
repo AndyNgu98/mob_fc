@@ -18,15 +18,14 @@ const media = {
     }
 }
 
-
 // -------- THIS IS THE WEEKLY REFRESH OF THE INSTAGRAM MEDIA ------------
 
-// const week = (((1000 * 60) * 60 ) * 24) * 7
+const week = (((1000 * 60) * 60 ) * 24) * 7
 
-// setInterval(function(){
-//     //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
-//     retrieveId()
-// }, week);
+setInterval(function(){
+    //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
+    retrieveId()
+}, week);
 
 
 // RUNNING ALL FUNCTIONS
