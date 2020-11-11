@@ -1,4 +1,4 @@
-        <!-- Player Hero -->
+<!-- Player Hero -->
     <section class="player-hero hero">
       <div class="hero-body">
         <div class="container">
@@ -9,12 +9,10 @@
     </section>
 
 
-            <!-- Player Cards -->
+<!-- Player Cards -->
     <section class=" player-card players">
       <div class="player-con container is-widescreen pr-6">
         
-        
-
         <% players.forEach(function(player) { %>
           <div class="columns ml-6 my-6">
             <% player.forEach(function(card) { %>
@@ -51,9 +49,41 @@
           </div>
         <% }) %>
           
-          
-
-        
-
       </div>
-    </section>
+    </section> 
+    
+
+
+
+
+    <section id="fixtures" class="tables">
+      <figure class="tables__img is-128x128 "> <img src="" alt=""></figure>
+      <h2 class="tables__sub"> Fixtures</h2>
+      <div class="table-container tables__margin">
+          <table class="center table is-hoverable is-bordered is-fullwidth" style="width:100%">
+  
+              <thead>
+                  <tr class="is-selected has-background-black">
+                      <th class="is-size-6-mobile"></th>
+                      <th class="is-size-6-mobile">Appearance</th> 
+                      <th class="is-size-6-mobile">Assists</th>
+                      <th class="is-size-6-mobile">Away</th>
+                      <th class="is-size-6-mobile">Venue</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <% fixtures.forEach(function(fixture) { %>
+                      <tr>      
+                          <td class="is-size-6-mobile"><%= fixture.Date %></td>
+                          <td class="is-size-6-mobile"><%= fixture.Time %></td>
+                          <td class="is-size-6-mobile"><%= fixture.Home %></td>
+                          <td class="is-size-6-mobile"><%= fixture.Away %></td>
+                          <td class="is-size-6-mobile"><%= fixture.Venue %></td>
+                      </tr>   
+                  <% }) %>
+              </tbody>
+          </table>
+      </div>
+  </section>
+   
+    
