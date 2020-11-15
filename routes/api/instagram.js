@@ -6,8 +6,6 @@ var router = express.Router();
 
 let pool = mysql.createPool(config.keys.db);
 
-console.log('hello from instagramjs');
-
 const media = {
     auth: {
         USER_ID: config.keys.auth.user_Id,
