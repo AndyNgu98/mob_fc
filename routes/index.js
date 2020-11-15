@@ -76,16 +76,16 @@ router.get('/', function(req, res, next) {
         
           pool.getConnection((err, connection ) => {
               pool.query(`DELETE FROM instagram;`,(error, res ) =>  {
-                  const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE')
+                console.log(`delete: ${res}`)
+              })
+              const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE')
                   console.log(mediaArray)
                   mediaArray.slice(0, 5).forEach(obj => {
                       pool.query(`INSERT INTO instagram SET media_type =?, media_url =?,  permalink =?, thumbnail_url =?`, 
                       [obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
-                          console.log(response)
+                          console.log(`insert:${response}`)
                       })
                   }) 
-                  
-              })
           })
       })
       .catch(error => {
