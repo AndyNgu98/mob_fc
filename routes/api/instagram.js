@@ -20,13 +20,12 @@ const media = {
 
 // -------- THIS IS THE WEEKLY REFRESH OF THE INSTAGRAM MEDIA ------------
 
-const week = (((1000 * 60) * 60 ) * 24) * 7
+const day = ((1000 * 60) * 60 ) * 24
 
 setInterval(function(){
     //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
     retrieveId()
-}, week);
-
+}, day);
 
 // RUNNING ALL FUNCTIONS
 function retrieveId() {
@@ -80,7 +79,7 @@ function mediaCheck(mediaToken) {
         pool.getConnection((err, connection ) => {
             pool.query(`DELETE FROM instagram;`,(error, res ) =>  {
                 const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE')
-
+                console.log(mediaArray)
                 mediaArray.slice(0, 5).forEach(obj => {
                     pool.query(`INSERT INTO instagram SET media_type =?, media_url =?,  permalink =?, thumbnail_url =?`, 
                     [obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
