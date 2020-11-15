@@ -49,8 +49,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-setInterval(function(){
-  console.log('from app.js')
-}, 5000);
-
 module.exports = app;

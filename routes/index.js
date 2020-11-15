@@ -5,9 +5,20 @@ var router = express.Router();
 
 let pool = mysql.createPool(config.keys.db);
 
+setInterval(function(){
+  //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
+  console.log('from INDEX.JS OUTSIDE')
+}, 10000);
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
+
+  setInterval(function(){
+    //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
+    console.log('from index.js')
+  }, 10000);
+
 
   //Get Results from DB
   pool.getConnection((err, connection) => {

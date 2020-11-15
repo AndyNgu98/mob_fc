@@ -6,6 +6,8 @@ var router = express.Router();
 
 let pool = mysql.createPool(config.keys.db);
 
+console.log('hello from instagramjs');
+
 const media = {
     auth: {
         USER_ID: config.keys.auth.user_Id,
@@ -24,13 +26,9 @@ const day = ((1000 * 60) * 60 ) * 24
 
 setInterval(function(){
     //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
-    retrieveId()
+    
 }, 25000);
 
-<<<<<<< HEAD
-// retrieveId()
-=======
->>>>>>> master
 
 
 // RUNNING ALL FUNCTIONS
