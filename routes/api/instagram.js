@@ -27,6 +27,9 @@ setInterval(function(){
     retrieveId()
 }, day);
 
+retrieveId()
+
+
 // RUNNING ALL FUNCTIONS
 function retrieveId() {
     pool.getConnection((err, connection ) => {
