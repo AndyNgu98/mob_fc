@@ -25,9 +25,9 @@ const day = ((1000 * 60) * 60 ) * 24
 setInterval(function(){
     //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
     retrieveId()
-}, day);
+}, 25000);
 
-retrieveId()
+// retrieveId()
 
 
 // RUNNING ALL FUNCTIONS
