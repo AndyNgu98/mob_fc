@@ -3,7 +3,7 @@
   <h2 class="medias__title">FOLLOW US ON INSTAGRAM</h2>
   <div class="medias__container">
     <% instagram.forEach(function(insta) { %>        
-      <div class="column "><a href="<%= insta.link %>"><img src="<%= insta.media %>" alt="" class="medias__img"></a></div>
+      <div class="column "><a href="<%= insta.permalink %>"><img src="<%= insta.media_url %>" alt="" class="medias__img"></a></div>
       <% }) %>
   </div>
 </div>
