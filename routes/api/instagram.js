@@ -27,7 +27,10 @@ setInterval(function(){
     retrieveId()
 }, 25000);
 
+<<<<<<< HEAD
 // retrieveId()
+=======
+>>>>>>> master
 
 
 // RUNNING ALL FUNCTIONS
