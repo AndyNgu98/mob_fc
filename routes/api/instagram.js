@@ -27,7 +27,6 @@ setInterval(function(){
     retrieveId()
 }, day);
 
-retrieveId()
 
 
 // RUNNING ALL FUNCTIONS
