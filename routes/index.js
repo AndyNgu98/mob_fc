@@ -14,22 +14,12 @@ router.get('/', function(req, res, next) {
           USER_ID: config.keys.auth.user_Id,
           APP_ID: config.keys.auth.app_Id,
           APP_SECRET: config.keys.auth.app_Secret,
-          
       },
       url: {
           ROOT: config.keys.auth.root_Url,
       }
   }
-  
-  // -------- THIS IS THE WEEKLY REFRESH OF THE INSTAGRAM MEDIA ------------
-  
-  // RUNNING ALL FUNCTIONS
-function retrieveId() {
-  pool.getConnection((err, connection ) => {
-      
-  })
-}  
-  
+   
   //Get Results from DB
   pool.getConnection((err, connection) => {
     connection.query(`SELECT * FROM results`, (error, points) => {
@@ -74,20 +64,6 @@ function retrieveId() {
     });
   })
 });
-
-
-function chunk(array, size) {
-  var chunked_arr = [];
-  for (var i = 0; i < array.length; i++) {
-    var last = chunked_arr[chunked_arr.length - 1];
-    if (!last || last.length === size) {
-      chunked_arr.push([array[i]]);
-    } else {
-      last.push(array[i]);
-    }
-  }
-  return chunked_arr;
-}
 
 module.exports = router;
 

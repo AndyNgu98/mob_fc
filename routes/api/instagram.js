@@ -1,6 +1,7 @@
 var express = require('express');
 var axios = require('axios');
 var mysql   = require('mysql');
+var cron = require('node-cron');
 var config = require('../../config');
 var router = express.Router();
 
@@ -18,30 +19,28 @@ const media = {
     }
 }
 
+
 // -------- THIS IS THE WEEKLY REFRESH OF THE INSTAGRAM MEDIA ------------
 let i = `SELECT access_token FROM config`; 
 
-const day = ((1000 * 60) * 60 ) * 24
-
-setInterval(function(){
-    //  FUNCTION THAT REFRESHES AND SELECTS TOKEN THEN REFRESHES MEDIA AND UPDATE INTO DATABASE 
-    
-}, 25000);
-
-// RUNNING ALL FUNCTIONS
-function retrieveId() {
-    pool.getConnection((err, connection ) => {
-        pool.query(`SELECT access_token FROM config WHERE ID=?`, `instagram`, (err, res) => {
-            // REFRESH MEDIA FUNCTION(res[0].access_token)
-            mediaCheck(res[0].access_token)
-            // refreshToken(res[0].access_token)
-        })
-    })
-}
+    // cron.schedule('0 0 0 * * *', () => {
+    //     retrieveId();
+    // })
 
 router.get('/', function(req, res, next) {
+    retrieveId();
+
+    // RUNNING ALL FUNCTIONS
+    function retrieveId() {
+        pool.getConnection((err, connection ) => {
+            pool.query(`SELECT access_token FROM config WHERE tokenId =1`, (err, res) => {
+                mediaCheck(res[0].access_token)
+                refreshToken(res[0].access_token)
+            })
+        })
+    }
     // UPDATE TOKEN
-    function insertTok() {
+    function refreshToken() {
         pool.query(i, (error,insertTokres) => {
             axios.get(`https://graph.instagram.com/refresh_access_token`, {
             params: {
@@ -95,8 +94,6 @@ router.get('/', function(req, res, next) {
     res.json({
         message: `hello world`,
     })
-    insertTok(),
-    mediaCheck()
 })
 
 module.exports = router;
