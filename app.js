@@ -16,8 +16,9 @@ const { cronJob } = require('./components/cron');
 var app = express();
 
 
-var cronSchedule = cron.schedule('*/5 * * * * *', () => {
-console.log('PM2 IS WORKING EVERY 5 SECONDS')
+var cronSchedule = cron.schedule('*/10 * * * * *', () => {
+cronJob()
+console.log('PM2 IS WORKING EVERY 10 SECONDS')
 })
 
 cronSchedule.start()
