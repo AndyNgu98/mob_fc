@@ -28,8 +28,6 @@ setInterval(function(){
     
 }, 25000);
 
-
-
 // RUNNING ALL FUNCTIONS
 function retrieveId() {
     pool.getConnection((err, connection ) => {
@@ -37,24 +35,17 @@ function retrieveId() {
             // REFRESH MEDIA FUNCTION(res[0].access_token)
             mediaCheck(res[0].access_token)
             // refreshToken(res[0].access_token)
-            
         })
     })
 }
 
-
-
-router.get('/:name', function(req, res, next) {
-
-    
-    // BET THIS WORKS NOW
-
+router.get('/', function(req, res, next) {
+    // UPDATE TOKEN
     function insertTok() {
-        pool.query(i, (error,response) => {
-            const x = response[0].access_token
+        pool.query(i, (error,insertTokres) => {
             axios.get(`https://graph.instagram.com/refresh_access_token`, {
             params: {
-                access_token: x,
+                access_token: insertTokres[0].access_token,
                 grant_type: 'ig_refresh_token'
             }
             })
@@ -73,14 +64,12 @@ router.get('/:name', function(req, res, next) {
             }) 
         } 
 
-    // WE WANT THIS TO DELETE FROM DATABASE THEN INSERT NEW ONE INTO IT.
-
+        // UPDATE MEDIA DB
     function mediaCheck() {
-        pool.query(i, (error,response) => {
-            const x = response[0].access_token
+        pool.query(i, (error,mediaTokres) => {
         axios.get(`${media.url.ROOT}/${media.auth.USER_ID}/media`, {
             params: {
-                access_token: x,
+                access_token: mediaTokres[0].access_token,
                 fields: 'media_type,media_url,permalink,thumbnail_url,timestamp'
             }
         })
@@ -93,8 +82,7 @@ router.get('/:name', function(req, res, next) {
                         [obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
                             console.log(response)
                         })
-                    }) 
-                    
+                    })      
                 })
             })
         })
@@ -104,19 +92,11 @@ router.get('/:name', function(req, res, next) {
         })  
     }
 
-
-
-
-    
-    
-// COOL NOW THATS WORKING TRY AND GET IT SO THAT THE NEW TOKEN IS RETREIVED AND UPDATED.
-    
-    
     res.json({
-        message: `hello world ${req.params.name}`,
-        insertToken: insertTok(),
-        mediaCheck: mediaCheck()
+        message: `hello world`,
     })
+    insertTok(),
+    mediaCheck()
 })
 
 module.exports = router;

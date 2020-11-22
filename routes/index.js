@@ -20,9 +20,6 @@ router.get('/', function(req, res, next) {
           ROOT: config.keys.auth.root_Url,
       }
   }
-
- retrieveId()
-
   
   // -------- THIS IS THE WEEKLY REFRESH OF THE INSTAGRAM MEDIA ------------
   
@@ -36,69 +33,44 @@ function retrieveId() {
   //Get Results from DB
   pool.getConnection((err, connection) => {
     connection.query(`SELECT * FROM results`, (error, points) => {
-
       const scores = []
-
       points.forEach(point => {
         scores.push({
-          Date: point.Date,
-          Time: point.Time,
-          Home: point.Home,
-          Score: point.Score,
-          Away: point.Away
-
+          Date: point.Date, Time: point.Time, Home: point.Home, Score: point.Score, Away: point.Away
         })
       });
 
-        connection.query(`SELECT * FROM fixtures`, (error, plays) => {
-              
-          const fixtures = []
-
-          plays.forEach(play => {
-            fixtures.push({
-              Date: play.Date,
-              Time: play.Time,
-              Home: play.Home,
-              Away: play.Away,
-              Venue: play.Venue,
-            })
+      connection.query(`SELECT * FROM fixtures`, (error, plays) => {    
+        const fixtures = []
+        plays.forEach(play => {
+          fixtures.push({
+            Date: play.Date, Time: play.Time, Home: play.Home, Away: play.Away, Venue: play.Venue, 
           })
-
-          // pool.query(`SELECT access_token FROM config WHERE ID=?`, `instagram`, (err, instares) => {
-          //   // REFRESH MEDIA FUNCTION(res[0].access_token)
-          //   axios.get(`${media.url.ROOT}/${media.auth.USER_ID}/media`, {
-          //     params: {
-          //         access_token: instares[0].access_token,
-          //         fields: 'media_type,media_url,permalink,thumbnail_url,timestamp'
-          //     }
-          //   })
-          //   .then(response => {
-          //     const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE') 
-          //     console.log(mediaArray.slice(0, 5))
-
-          //     const data = {
-          //       title: 'MOB-FC',
-          //       instagram: mediaArray.slice(0, 5),
-          //       scores,
-          //       fixtures,
-    
-          //     }
-          //     res.render('index', data);
-          //   })
-          //   .catch(error => {
-          //       console.log(error)
-          //   })          
-          // })
-
-          const data = {
-            title: 'MOB-FC',
-            // instagram: mediaArray.slice(0, 5),
-            scores,
-            fixtures,
-
-          }
-          res.render('index', data);
-        });      
+        })
+                  
+        pool.query(`SELECT access_token FROM config WHERE tokenId =1`, (err, instares) => {
+          // REFRESH MEDIA FUNCTION(res[0].access_token)
+          axios.get(`${media.url.ROOT}/${media.auth.USER_ID}/media`, {
+            params: {
+                access_token: instares[0].access_token,
+                fields: 'media_type,media_url,permalink,thumbnail_url,timestamp'
+            }
+          })
+          .then(response => {
+            const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE') 
+            const data = {
+              title: 'MOB-FC',
+              instagram: mediaArray.slice(0, 5),
+              scores,
+              fixtures,
+            }
+            res.render('index', data);
+          })
+          .catch(error => {
+              console.log(error)
+          })          
+        })         
+      });      
     });
   })
 });
