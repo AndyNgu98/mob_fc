@@ -48,8 +48,8 @@ function mediaCheck(token) {
 
 function mediaUpdate(array) {
     array.slice(0, 5).forEach(obj => {
-        pool.query(`INSERT INTO instagram SET media_type =?, media_url =?,  permalink =?, thumbnail_url =?`, 
-        [obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
+        pool.query(`INSERT INTO instagram SET ID =? media_type =?, media_url =?,  permalink =?, thumbnail_url =?`, 
+        [ obj.id, obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
             console.log(response)
         })
     })
