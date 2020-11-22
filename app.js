@@ -4,12 +4,23 @@ var path                = require('path');
 var cookieParser        = require('cookie-parser');
 var logger              = require('morgan');
 var sassMiddleware      = require('node-sass-middleware');
+var cron = require('node-cron');
+// var { cronJob } = require('./components/cron');
+
 
 var indexRouter = require('./routes/index');
 var playersRouter = require('./routes/players');
 var apiInstagram = require('./routes/api/instagram');
+const { cronJob } = require('./components/cron');
 
 var app = express();
+
+
+var cronSchedule = cron.schedule('*/5 * * * * *', () => {
+console.log('PM2 IS WORKING EVERY 5 SECONDS')
+})
+
+cronSchedule.start()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
