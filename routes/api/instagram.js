@@ -19,6 +19,7 @@ const media = {
 }
 
 // -------- THIS IS THE WEEKLY REFRESH OF THE INSTAGRAM MEDIA ------------
+let i = `SELECT access_token FROM config`; 
 
 const day = ((1000 * 60) * 60 ) * 24
 
@@ -35,86 +36,88 @@ function retrieveId() {
         pool.query(`SELECT access_token FROM config WHERE ID=?`, `instagram`, (err, res) => {
             // REFRESH MEDIA FUNCTION(res[0].access_token)
             mediaCheck(res[0].access_token)
-            refreshToken(res[0].access_token)
+            // refreshToken(res[0].access_token)
             
         })
     })
 }
 
-// ----------- THIS IS REFRESH TOKEN AND UPDATE INTO DATABASE --------------
 
-// REFRESH TOKEN
-function refreshToken(accessToken) {
-    axios.get(`https://graph.instagram.com/refresh_access_token`, {
-        params: {
-            access_token: accessToken,
-            grant_type: 'ig_refresh_token'
-        }
-    })
-    .then(response => { 
-        // UPDATE TOKEN INTO DB
-        pool.getConnection((err, connection) => {
-            const instaToken = response.data.access_token
-            pool.query(`UPDATE config SET access_token =? WHERE ID =?`, [instaToken,`instagram`], (error, response) => {
-                console.log(response) 
+
+router.get('/:name', function(req, res, next) {
+
+    
+    // BET THIS WORKS NOW
+
+    function insertTok() {
+        pool.query(i, (error,response) => {
+            const x = response[0].access_token
+            axios.get(`https://graph.instagram.com/refresh_access_token`, {
+            params: {
+                access_token: x,
+                grant_type: 'ig_refresh_token'
+            }
             })
-        });
-    })
-    .catch(error => {
-        console.log(error)
-    })
-} 
-
-// ------ THIS IS RETRIEVE MEDIA INFORMATION AND UPDATE TO DATABASE --------------
-
-// REFRESH MEDIA FUNCTION
-
-function mediaCheck(mediaToken) {
-    axios.get(`${media.url.ROOT}/${media.auth.USER_ID}/media`, {
-        params: {
-            access_token: mediaToken,
-            fields: 'media_type,media_url,permalink,thumbnail_url,timestamp'
-        }
-    })
-    .then(response => {
-      
-        pool.getConnection((err, connection ) => {
-            pool.query(`DELETE FROM instagram;`,(error, res ) =>  {
-                const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE')
-                console.log(mediaArray)
-                mediaArray.slice(0, 5).forEach(obj => {
-                    pool.query(`INSERT INTO instagram SET media_type =?, media_url =?,  permalink =?, thumbnail_url =?`, 
-                    [obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
-                        console.log(response)
+            .then(response => { 
+                pool.getConnection((err, connection) => {
+                    let datatok = response.data.access_token;
+                    let sql = `UPDATE config SET access_token = ? WHERE tokenId = 1`;
+                    pool.query(sql, datatok, (err, response) => {
+                        console.log(response);
                     })
-                }) 
-                
+                })
+            })
+            .catch(error => {
+                console.log(error)
+            })
+            }) 
+        } 
+
+    // WE WANT THIS TO DELETE FROM DATABASE THEN INSERT NEW ONE INTO IT.
+
+    function mediaCheck() {
+        pool.query(i, (error,response) => {
+            const x = response[0].access_token
+        axios.get(`${media.url.ROOT}/${media.auth.USER_ID}/media`, {
+            params: {
+                access_token: x,
+                fields: 'media_type,media_url,permalink,thumbnail_url,timestamp'
+            }
+        })
+        .then(response => {
+            pool.getConnection((err, connection ) => {
+                pool.query(`DELETE FROM instagram;`,(error, res ) =>  {
+                    const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE')
+                    mediaArray.slice(0, 5).forEach(obj => {
+                        pool.query(`INSERT INTO instagram SET media_type =?, media_url =?,  permalink =?, thumbnail_url =?`, 
+                        [obj.media_type, obj.media_url, obj.permalink, obj.thumbnail_url ], (error, response) => {
+                            console.log(response)
+                        })
+                    }) 
+                    
+                })
             })
         })
+        .catch(error => {
+            console.log(error)
+        }) 
+        })  
+    }
+
+
+
+
+    
+    
+// COOL NOW THATS WORKING TRY AND GET IT SO THAT THE NEW TOKEN IS RETREIVED AND UPDATED.
+    
+    
+    res.json({
+        message: `hello world ${req.params.name}`,
+        insertToken: insertTok(),
+        mediaCheck: mediaCheck()
     })
-    .catch(error => {
-        console.log(error)
-    })
-}
-
-
-// ---------------- GET EXISITNG TOKEN AND REFRESHES IT SAVING INTO DB AND UPDATES MEDIA INTO DB ---------------------- 
-function getCurrenttoken() {
-    pool.getConnection((err, connection) => {
-        connection.query(`SELECT access_token FROM config WHERE instagramID = 1`, (error, token) => {
-            refreshToken(token)
-        })
-        if(err) {
-            console.log(err);
-        } else {
-            mediaCheck()
-        }
-    });
-}
-
-router.get('/', function(req, res, next) {
-
-});
+})
 
 module.exports = router;
 
