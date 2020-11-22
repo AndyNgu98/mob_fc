@@ -48,9 +48,18 @@ function mediaCheck(token) {
 
 function mediaUpdate(array) {
     array.slice(0, 5).forEach(obj => {
-        pool.query(`INSERT INTO instagram SET media_type =?, media_url =?,  permalink =?,`, 
-        [ obj.media_type, obj.media_url, obj.permalink ], (error, response) => {
+        // console.log(obj.media_type)
+        console.log(obj.media_url)
+        // console.log(obj.permalink)
+        pool.query(`INSERT INTO instagram SET media_url = https://scontent-lht6-1.cdninstagram.com/v/t51.29350-15/121965805_364610904733733_7996473189419180647_n.jpg?_nc_cat=100&ccb=2&_nc_sid=8ae9d6&_nc_ohc=pUI0N_D-3rIAX_dyS_y&_nc_ht=scontent-lht6-1.cdninstagram.com&oh=818461ca38f59f95ec3366d3f531faed&oe=5FDE9AEC`, 
+        (error, response) => {
             console.log(response)
+            console.log('static insert')
+        })
+        pool.query(`INSERT INTO instagram SET media_url =?`, 
+        [obj.media_url], (error, response) => {
+            console.log(response)
+            console.log('media insert')
         })
     })
 }
