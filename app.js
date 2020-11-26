@@ -12,16 +12,17 @@ var indexRouter = require('./routes/index');
 var playersRouter = require('./routes/players');
 var apiInstagram = require('./routes/api/instagram');
 const { cronJob } = require('./components/cron');
+const { response } = require('express');
 
 var app = express();
 
 
-var cronSchedule = cron.schedule('*/10 * * * * *', () => {
+var cronSchedule = cron.schedule('0 15 * * *', () => {
 cronJob()
-console.log('PM2 IS WORKING EVERY 10 SECONDS')
+console.log('Its being updated every day at 3pm')
 })
 
-cronSchedule.start()
+// cronSchedule.start()
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

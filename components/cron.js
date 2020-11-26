@@ -38,6 +38,7 @@ function mediaCheck(token) {
     .then(response => {
         pool.query(`DELETE FROM instagram`, (err, res) => {
             const mediaArray = response.data.data.filter(obj => obj.media_type === 'IMAGE')
+            // MEDIAUPDATE, THE ARGUEMENT PASSED IN IS WHAT IS BEING USED IN PLACE OF THE PLACE HOLD CALLED array so MediaAraay is whatis being passed in.
             mediaUpdate(mediaArray)
         })
     })
@@ -45,11 +46,11 @@ function mediaCheck(token) {
         console.log(error)
     })
 } 
-
+// THIS WORKS SO YOUR GOOD NOW YOU JUST NEED TO SOMEHOW INSER THE PERMALINK ASWELL
 function mediaUpdate(array) {
     array.slice(0, 5).forEach(obj => {
-        pool.query(`INSERT INTO instagram SET media_url =?`, 
-        [obj.media_url], (error, response) => {
+        pool.query(`INSERT INTO instagram SET media_url =?, permalink =?`, 
+        [obj.media_url, obj.permalink], (error, response) => {
             console.log(response)
         })
     })
